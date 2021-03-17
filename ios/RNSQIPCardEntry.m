@@ -69,7 +69,6 @@ RCT_REMAP_METHOD(startCardEntryFlow,
         SQIPCardEntryViewController *cardEntryForm = [self _makeCardEntryForm];
         cardEntryForm.collectPostalCode = collectPostalCode;
         cardEntryForm.delegate = self;
-        cardEntryForm.title = "Add New Card";
         
         self.cardEntryViewController = cardEntryForm;
 
@@ -78,6 +77,7 @@ RCT_REMAP_METHOD(startCardEntryFlow,
             [((UINavigationController *)rootViewController) pushViewController:cardEntryForm animated:YES];
         } else {
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:cardEntryForm];
+            navigationController.title = @"Add New Card";
             [rootViewController presentViewController:navigationController animated:YES completion:nil];
         }
         resolve([NSNull null]);
