@@ -69,6 +69,8 @@ RCT_REMAP_METHOD(startCardEntryFlow,
         SQIPCardEntryViewController *cardEntryForm = [self _makeCardEntryForm];
         cardEntryForm.collectPostalCode = collectPostalCode;
         cardEntryForm.delegate = self;
+        cardEntryForm.title = "Add New Card";
+        
         self.cardEntryViewController = cardEntryForm;
 
         UIViewController *rootViewController = UIApplication.sharedApplication.keyWindow.rootViewController;
